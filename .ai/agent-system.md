@@ -33,7 +33,7 @@ Browser navigation, interaction, page state, screenshots, uploads/downloads, CDP
 Search, source retrieval, evidence collection, synthesis, citation/provenance, freshness and contradiction analysis.
 
 ### Scraper SLAVE
-Structured extraction, pagination, selectors, normalization, deduplication, rate limiting and export.
+Structured extraction, pagination, selectors, normalization, deduplication, rate limiting and export. Scraping behavior must respect applicable robots directives, site terms and permission boundaries.
 
 ### Coding / Repo SLAVE
 Code search, architecture analysis, implementation, testing, builds, repository operations, issue/task/PR workflows and documentation sync.
@@ -73,6 +73,9 @@ Decision analysis, options, tradeoffs, planning and evidence-backed recommendati
 
 ### Personal Assistant SLAVE
 User-approved personal workflows, reminders, scheduling, communication preparation and recurring routines.
+
+### Automation SLAVE
+Scheduled and event-driven workflow execution, dependencies, retries/backoff, concurrency limits, pause/resume/cancel, notifications, execution history and approval gates. Automation remains subject to the same permission, safety and audit boundaries as interactive tasks.
 
 ## 3. Common agent contract
 
@@ -123,6 +126,14 @@ A specialist result should communicate:
 - confidence/quality signals where meaningful
 - recommended next action
 
-## 7. No specialist bypass
+## 7. Capability status
+
+Agent and capability documentation must distinguish target design from verified implementation. Use the lifecycle:
+
+`planned` → `discovered` → `partial` → `wired` → `tested` → `production-ready`
+
+A status must be backed by repository evidence, tests/evals or task history. A capability listed in the registry or taxonomy is not proof that it exists in the implementation.
+
+## 8. No specialist bypass
 
 Specialists cannot bypass Master SLAVE's permission, safety, authentication, secrets, audit or storage boundaries merely because direct access is easier.
