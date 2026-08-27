@@ -1,19 +1,64 @@
 # SLAVE Agent Solution Book
 
-The canonical agent documentation and execution standard for the SLAVE ecosystem.
+The canonical agent-development and architecture governance repository for the SLAVE ecosystem.
 
-This repository defines how coding agents must discover, understand, modify, test, verify, and document SLAVE codebases. It is intentionally hierarchical so agents load only the context relevant to a task.
+SLAVE is intended to become a local-first, open-source, BYOK AI operating environment with one **Master SLAVE** coordinating specialized agents, tools, integrations and automations.
 
-## Core rule
+## The daily workflow
 
-**Never implement by guessing.** Before changing code, inspect the repository, load the applicable Solution Book sections and local `AGENT.md`, locate existing implementations and connections, understand them, then modify/reuse, wire, test, build, fix, verify, and synchronize documentation.
+The user should be able to say:
 
-## Structure
+```text
+Develop: <objective>
+```
+
+The agent then reads the Solution Book, inspects the actual target repository, finds existing implementations, creates/selects the required task ledger, assigns specialist agents, implements, wires, tests, repairs, builds and synchronizes documentation.
+
+The user should not need to know the repository's internal paths.
+
+## Target ecosystem
+
+```text
+Master SLAVE
+├── Browser SLAVE
+├── Research SLAVE
+├── Scraper SLAVE
+├── Coding / Repo SLAVE
+├── Data SLAVE
+├── Finance SLAVE
+├── Creative SLAVE
+│   ├── Image SLAVE
+│   ├── Video SLAVE
+│   └── Audio SLAVE
+├── Documents SLAVE
+├── Reports SLAVE
+├── QA SLAVE
+├── Sales SLAVE
+├── Advisor SLAVE
+├── Personal Assistant SLAVE
+└── Automation SLAVE
+```
+
+The platform also targets browser/computer control, filesystem and shell capabilities, MCP and plugins, scheduling, memory, self-evaluation, bounded self-healing and controlled learning/self-evolution.
+
+## Documentation architecture
 
 - `.ai/` — global Solution Book
-- `tasks/active/` — executable task ledgers
+- local `AGENT.md` — package/application rules in implementation repositories
+- `tasks/active/` — executable work ledgers
 - `tasks/archive/` — completed task history
-- `docs/` — operational and contributor documentation
-- `.github/` — issue, PR, and automation standards
+- `docs/` — human-facing documentation
+- `.github/` — GitHub workflow standards
 
-See `.ai/README.md` for the operating model and `.ai/agent-protocol.md` for the mandatory implementation protocol.
+## Start here
+
+1. `.ai/README.md`
+2. `.ai/daily-development-protocol.md`
+3. `.ai/development-roadmap.md`
+4. `.ai/agent-system.md`
+5. `.ai/orchestration.md`
+6. `.ai/implementation-protocol.md`
+
+## Core engineering rule
+
+**Never implement by guessing.** Analyze the existing codebase first. Search for canonical implementations and all affected connections. Reuse/modify rather than duplicate. Wire the complete path. Test it. Build it. Fix failures. Record evidence. Synchronize the Solution Book.
