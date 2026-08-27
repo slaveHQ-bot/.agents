@@ -6,6 +6,10 @@ The `.ai/` directory is the global context layer for SLAVE agents.
 
 The Solution Book is the architectural source of truth, but it must remain hierarchical and evidence-based. It is never a substitute for inspecting the real implementation repository.
 
+## Repository scope for this Solution Book
+
+This repository is the canonical SLAVE Solution Book and governance source. It is documentation-only audit scope. Do not use this repository to infer implementation status, and do not pull implementation facts from other SLAVE repositories into this Solution Book unless a future task explicitly changes the permitted evidence scope.
+
 ## Loading order
 
 1. Read the complete active task.
@@ -33,7 +37,8 @@ The Solution Book is the architectural source of truth, but it must remain hiera
 | `integration-strategy.md` | Browser, MCP, plugin, desktop and cloud integration rules |
 | `self-evolution.md` | Evaluation, learning, self-healing and controlled self-evolution |
 | `security-and-permissions.md` | Permission, safety, secret and audit model |
-| `capability-matrix.md` | Capability inventory and expected verification |
+| `capability-matrix.md` | Target capability inventory and verification expectations |
+| `competitive-benchmark.md` | Evidence-based benchmark of current agent harness capabilities |
 | `daily-development-protocol.md` | Meaning of the user's short `Develop:` command |
 | `implementation-protocol.md` | Mandatory engineering workflow |
 | `testing-strategy.md` | Test, build and integration verification policy |
