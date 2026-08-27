@@ -38,6 +38,7 @@ The Solution Book is the architectural source of truth, but it must remain hiera
 | `implementation-protocol.md` | Mandatory engineering workflow |
 | `testing-strategy.md` | Test, build and integration verification policy |
 | `documentation-rules.md` | Rules for keeping docs synchronized |
+| `known-limitations.md` | Verified documentation, capability and automation constraints |
 | `github-workflow.md` | Issue → task → branch → PR → archive lifecycle |
 | `agent-protocol.md` | Constrained agent initialization and execution instructions |
 | `templates/` | Reusable task, agent, issue, PR and report templates |
@@ -53,6 +54,21 @@ Develop: <objective>
 The agent must automatically inspect the repository, determine where the work belongs, create/select a deterministic task, assign appropriate specialists, execute step-by-step, test, repair, audit connections, build and synchronize documentation.
 
 The user should not have to provide repository paths unless the requirement itself is ambiguous.
+
+## Agent-definition synchronization
+
+When individual agent definition files exist, they are audit inputs rather than independent sources of truth. Their capabilities, limitations and terminology must be reconciled against the registry, taxonomy, architecture and roadmap. Duplicate or conflicting definitions must not be copied blindly.
+
+The audit must distinguish:
+
+- aspirational capability
+- discovered implementation
+- partially wired capability
+- tested capability
+- production-ready capability
+- explicit limitation or exclusion
+
+See `known-limitations.md` for constraints discovered in the current repository.
 
 ## Important
 
