@@ -28,29 +28,27 @@ The agent system defines a conceptual lifecycle (`capabilities`, `health`, `plan
 
 **Exclusion:** do not generate runtime interfaces solely from these documentation method names.
 
-### 4. Current `slave-i` agent runtime does not yet implement the documented common lifecycle contract
+### 4. Implementation status is UNVERIFIED from this repository alone
 
-The current implementation contains a hard-coded `AgentRegistry` and multiple concrete `*Slave` classes, but `BaseSlave` exposes `AgentInfo`, tool/system-prompt hooks and `executeSubtask()` rather than the full documented `capabilities/health/plan/execute/observe/evaluate/cancel` contract. This is an **IMPLEMENTATION GAP**, not a reason to rewrite the runtime blindly.
+This repository is the canonical Solution Book and governance layer, not an implementation proof source. It does not contain enough executable artifacts, test results or build evidence to promote documented target capabilities to `wired`, `tested` or `production-ready`.
 
-**Evidence:** `packages/core` currently contains `AgentRegistry.ts`, `BaseSlave.ts`, and concrete agent implementations. `AgentRegistry` registers concrete classes directly; `BaseSlave` performs execution/retry/persistence work through `executeSubtask()`.
+**Required follow-up:** record implementation evidence only when a permitted implementation audit provides exact paths, checks, tests/evals or task-ledger evidence. Until then, classify implementation work as an **IMPLEMENTATION GAP** with expected behavior and verification requirements.
 
-### 5. Implementation agent taxonomy does not map 1:1 to the canonical specialist taxonomy
+### 5. Specialist taxonomy requires explicit mapping evidence
 
-The canonical registry names domain specialists such as Browser, Research, Scraper, Repo, Finance, Documents, Reports, QA, Sales, Advisor, Assistant and Automation. The current `slave-i` runtime instead registers a different set including Task, Verification, Browser, Computer, Code, Research, File, Data, Creative, Communication, Knowledge, Integration, Security and Automation agents, with additional concrete classes such as Terminal/Coder present in the source tree.
+The canonical registry names domain specialists such as Browser, Research, Scraper, Repo, Finance, Documents, Reports, QA, Sales, Advisor, Assistant and Automation. These names are canonical capability identifiers, not proof that matching runtime registrations exist elsewhere.
 
-This is a **DOCUMENTATION GAP / UNVERIFIED TARGET** until an explicit mapping is maintained. The implementation names must not be silently treated as equivalent to canonical specialist IDs.
+This remains a **DOCUMENTATION GAP / UNVERIFIED TARGET** until an explicit mapping and evidence record exists. Names must not be silently treated as equivalent across systems.
 
-### 6. Role roster and specialist registry are different taxonomies
+### 6. Role rosters and specialist registries are different taxonomies
 
-`slave-i/AGENT_ROSTER.md` describes engineering/product roles such as CTO Orchestrator, Product Manager, UX Researcher, Frontend Engineer and Security Engineer, while the canonical `.agents` registry describes runtime specialist capabilities. These are complementary concepts, but no authoritative role-to-specialist mapping currently exists.
+Engineering/product role lists and runtime specialist capability registries are complementary concepts, but no authoritative role-to-specialist mapping is maintained in this repository.
 
-Classify this as a **DOCUMENTATION GAP** rather than assuming the role list represents runtime registrations.
+Classify this as a **DOCUMENTATION GAP** rather than assuming that a role list represents runtime registrations.
 
-### 7. `SKILL_AUDIT.md` contains an unsupported completion claim
+### 7. Completion claims require evidence
 
-The current implementation `SKILL_AUDIT.md` says the skill system is fully operational and has no unresolved issues. That claim is broader than the evidence available in the repository and conflicts with the Solution Book's evidence-based completion rule and the agent-runtime lifecycle gap above.
-
-Classify the statement as a **CONFLICT** and keep unresolved implementation limitations explicit until tests/evals establish stronger status.
+Any statement that a skill, agent, workflow, integration or capability is fully operational, complete or production-ready must be backed by repository evidence, tests/evals or task history. Unsupported completion claims are **CONFLICT** findings against the Solution Book evidence rule.
 
 ### 8. MCP behavior must remain version-aware
 
