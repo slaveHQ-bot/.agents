@@ -34,6 +34,7 @@ The Solution Book is the architectural source of truth, but it must remain hiera
 | `self-evolution.md` | Evaluation, learning, self-healing and controlled self-evolution |
 | `security-and-permissions.md` | Permission, safety, secret and audit model |
 | `capability-matrix.md` | Capability inventory and expected verification |
+| `competitive-benchmark.md` | Evidence-backed external capability benchmark; not implementation proof |
 | `daily-development-protocol.md` | Meaning of the user's short `Develop:` command |
 | `implementation-protocol.md` | Mandatory engineering workflow |
 | `testing-strategy.md` | Test, build and integration verification policy |
@@ -68,7 +69,7 @@ The audit must distinguish:
 - production-ready capability
 - explicit limitation or exclusion
 
-See `known-limitations.md` for constraints discovered in the current repository.
+See `known-limitations.md` for constraints discovered in the current repository and `competitive-benchmark.md` for external benchmark evidence.
 
 ## Important
 
